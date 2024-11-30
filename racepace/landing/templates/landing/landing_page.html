@@ -1,0 +1,261 @@
+{% extends "layout.html" %}
+
+{% load static %} 
+<script src="{% static 'js/main.js' %}" defer></script>
+
+{% block heroContent %}
+<div class="overflow-x-hidden flex flex-col items-center justify-center p-6 font-poppins font-semibold">
+    <div class="w-full text-center md:pt-20">
+      <h1 class="text-3xl md:text-5xl lg:text-7xl text-white md:leading-extra-loose md:pt-3 md:pl-10">
+        The <span class="text-[#fca42c]">#1</span> AI Pacing Tool <br/> for Trail Races
+      </h1>
+      <img
+      src="{% static 'assets/img/underline.png' %}"
+      alt="underline"
+      class="absolute h-auto w-[40%] lg:w-[30%] left-[160px] md:left-[270px] lg:left-[580px] lg:top-[410px]"
+      />
+    </div>
+    <div class="absolute right-1 top-72 lg:right-6 lg:bottom-52 p-6">
+        <p class="text-xs text-white font-poppins font-light">Race Recommendations:</p>
+        <p class="text-xs text-white font-poppins font-light">Chat With Us!</p>
+        <div class="fixed right-4 bg-white rounded-full shadow-lg p-2 lg:p-6 transform transition-transform duration-300 hover:scale-110 hover:cursor-pointer">
+            <a href="{% url 'chat_page' %}">
+                <i class="fa-solid fa-comments lg:fa-xl text-[#053c5e]"></i>
+            </a>
+        </div>
+    </div>
+</div>  
+{% endblock %}
+
+{% block content %}
+<div 
+  id="contentSection" 
+  class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 p-6 lg:py-12 lg:px-20 opacity-0 translate-y-400 transition-all duration-3000 ease-in-out">
+    <!-- Left Section -->
+    <div class="font-poppins" id="leftSection">
+      <h2 class="text-2xl md:text-4xl lg:text-5xl font-semibold text-[#053c5e] md:leading-normal text-center lg:text-left lg:leading-normal">
+        Get a personalized race plan based on your current fitness and race dynamics.
+      </h2>
+      <div class="w-full flex justify-center lg:justify-start">
+        <button
+        class="text-white bg-[#fca42c] text-lg rounded-full mt-9 lg:mt-20 py-2 px-10 text-center hover:bg-[#ffb64f] transition duration-200 justify-center"
+      >
+        Get Your Race Plan
+      </button>
+      </div>
+    </div>
+  
+    <!-- Right Section -->
+    <div class="font-poppins md:w-[80%]" id="rightSection">
+      <div class="relative">
+        <div class="flex justify-center lg:justify-start">
+            <img
+            src="{% static 'assets/img/HillClimbing.png' %}"
+            alt="Trail Running"
+            class="w-[60%] lg:w-[90%] h-auto rounded-xl"
+            />
+        </div>
+        <div
+          class="absolute top-4 lg:left-[-50px] bg-white text-xs md:text-sm text-gray-700 font-semibold py-1 px-2 rounded shadow"
+        >
+          Get a customized trail race plan!
+        </div>
+        <div
+          class="absolute bottom-4 right-8 lg:right-4 bg-white text-xs md:text-sm text-gray-700 font-semibold py-1 px-2 rounded shadow"
+        >
+          According to your current fitness!
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block supportContent %}
+<div class="overflow-x-hidden flex flex-col md:flex-row lg:gap-16 text-white bg-[#053c5e] mx-10 p-16 rounded-3xl font-poppins">
+    <div class="flex-1 md:pr-14">
+        <h1 class="text-center md:text-left text-xl lg:text-5xl font-medium pb-6 lg:pb-10 leading-normal">How do we support you in your race?</h1>
+        <p class="pt-4 lg:pt-8 text-center md:text-left text-sm lg:text-xl">At RacePace, we know that good prepration can turn a race into an unforgettable experience. Race day is the result of months or even years of hardwork</p>
+        <p class="pt-6 lg:pt-8 text-center md:text-left text-sm lg:text-xl">That's why RacePace offers detailed race plans tailored to your abilities and race goals, ensuring you're ready to achieve your best.</p>
+    </div>
+    <div class="flex-1 pt-6 md:pt-0">
+        <div class="flex flex-col w-full">
+            <div class="flex flex-col md:flex-row w-full items-center">
+                <img  src="{% static 'assets/img/Support-icon-connect.png' %}" alt="connect" class="flex-shrink-0 w-8 h-8 lg:w-12 lg:h-12 bg-white rounded-md p-1 lg:p-2">
+                <p class="text-lg lg:text-4xl font-medium md:pl-2 lg:pl-4">
+                    Connect
+                </p>
+            </div>
+            <div class="w-full">
+                <p class="text-center md:text-left text-sm lg:text-xl pt-2 lg:pt-4">
+                    Easily sync with activities from your GPS watch to optimze race planning considering course dynamics and environment.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col w-full mt-6 pt-4 border-t-2 border-white/10">
+            <div class="flex flex-col md:flex-row w-full items-center">
+                <img  src="{% static 'assets/img/Support-icon-plan.png' %}" alt="plan" class="flex-shrink-0 w-8 h-8 lg:w-12 lg:h-12 bg-white rounded-md p-1 lg:p-2">
+                <p class="text-lg lg:text-4xl font-medium md:pl-2 lg:pl-4">
+                    Plan
+                </p>
+            </div>
+            <div class="w-full">
+                <p class="text-center md:text-left text-sm lg:text-xl pt-2 lg:pt-4">
+                    Strategize your race with personalized, data-driven guidance to optimize every phase of your race.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col w-full mt-6 pt-4 border-t-2 border-white/10">
+            <div class="flex flex-col md:flex-row w-full items-center">
+                <img  src="{% static 'assets/img/Support-icon-race.png' %}" alt="race" class="flex-shrink-0 w-8 h-8 lg:w-12 lg:h-12 bg-white rounded-md p-1 lg:p-2">
+                <p class="text-lg lg:text-4xl font-medium md:pl-2 lg:pl-4">
+                    Race
+                </p>
+            </div>
+            <div class="w-full">
+                <p class="text-center md:text-left text-sm lg:text-xl pt-2 lg:pt-4">
+                    Start race day with a personalized running plan for a peak performance and confident finish.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block featuresContent %}
+<div class="overflow-x-hidden flex flex-col lg:flex-row font-poppins justify-between items-center lg:items-end md:p-14">
+    <div class="">
+        <h2 class="text-3xl text-center lg:text-left lg:text-5xl font-medium text-[#053c5e]">Our Features</h2>
+        <p class="text-xl text-center lg:text-left lg:text-2xl font-normal text-[#081620] mt-3">This is what you will get with every race plan!</p>
+    </div>
+    <div class="my-5 lg:my-0">
+        <button class="bg-[#fca42c] text-white py-2 px-3 rounded-md focus:outline-none shadow-md">Get Your Race Plan</button>
+    </div>
+</div>
+<div class="flex gap-5 flex-col md:flex-row font-poppins">
+    <div class="flex flex-col items-center w-full md:w-1/3 text-center rounded-3xl">
+        <img src="{% static 'assets/img/Features-predictions.png' %}" alt="features predictions" class="w-[70%] md:w-[90%]">
+        <p class="text-xl lg:text-3xl font-medium text-[#053c5e] mt-5">Race Split Predictions</p>
+        <p class="text-sm lg:text-md font-normal text-[#081620] lg:px-12 mt-5">We estimate your average heart rate, pace and effort for each segment according to your current fitness.</p>
+    </div>
+    <div class="flex flex-col items-center w-full md:w-1/3 text-center rounded-3xl">
+        <img src="{% static 'assets/img/Features-planning.png' %}" alt="features nutrition" class="w-[70%] md:w-[90%]">
+        <p class="text-xl lg:text-3xl font-medium text-[#053c5e] mt-5">Nutrition Planning</p>
+        <p class="text-sm lg:text-md font-normal text-[#081620] lg:px-12 mt-5">We plan your calories, water and sodium intake for each segment.</p>
+    </div>
+    <div class="flex flex-col items-center w-full md:w-1/3 text-center rounded-3xl">
+        <img src="{% static 'assets/img/Features-essentials.png' %}" alt="features essentials" class="w-[70%] md:w-[90%]">
+        <p class="text-xl lg:text-3xl font-medium text-[#053c5e] mt-5">Race Essentials</p>
+        <p class="text-sm lg:text-md font-normal text-[#081620] lg:px-12 mt-5">Learn what the trail's terrain is and get a gear list that's got your back no matter the weather.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block videoContent %}
+<div class="overflow-x-hidden flex flex-col items-center justify-center p-6 font-poppins font-medium">
+    <h2 class="text-2xl lg:text-5xl text-[#053c5e] text-center mb-10">How do I get my <span class="text-[#fca42c]">Personalized Plan?</span></h2>
+    <div class="rounded-lg">
+        <iframe src="https://www.youtube.com/embed/gibyEUfNjHg?si=GhcH0hysmR_CGQhi" class="rounded-xl" height="400" width="800" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+{% endblock %}
+
+{% block reviewsContent %}
+{% endblock %}
+
+{% block aboutContent %}
+<div class="overflow-x-hidden flex flex-col md:flex-row lg:gap-6 text-white bg-[#053c5e] p-6 lg:p-16 rounded-3xl font-poppins">
+    <div class="flex-1 md:pr-6">
+        <h2 class="text-left text-xl lg:text-5xl font-medium pb-6 lg:pb-10 leading-normal">About Us</h2>
+        <img src="{% static 'assets/img/About Us-icon.png' %}" alt="about Us section" class="w-10">
+        <p class="pt-4 lg:pt-4 text-left text-sm lg:text-lg font-normal">As a professional ultramarathoner and trail runner, I've faced the challenges of creating custom race strategies. The hours spent analyzing race routes, past results, physical capabilities, equipment, and weather can be overwhelming. Often, we lack the time and resources to develop an effective race plan, leading to disappointing race outcomes. My own memories are filled with the races I didn't finish or perform well in, and the frustration that followed.</p>
+        <p class="pt-4 lg:pt-4 text-left text-sm lg:text-lg font-normal">Understanding the dedication you put into training, we founded RacePace to help you achieve your goals with precision and confidence.</p>
+        <p class="pt-4 lg:pt-8 text-left text-sm lg:text-lg font-normal">-RacePace Team</p>
+    </div>
+    <div class="relative flex-1 pt-6 md:pt-0 self-center pl-8">
+        <img src="{% static 'assets/img/AboutUs.png' %}" alt="about Us section" class="w-[90%] rounded-xl">
+        <div class="absolute top-2 left-0 md:left-[-50px] bg-white px-4 py-3 rounded-xl max-w-fit flex">
+            <img src="{% static 'assets/img/AboutUs-ido.png' %}" alt="about Us section" class="w-8 h-8 rounded-full">
+            <div class="pl-2">
+                <p class="text-xs font-normal text-[#053c5e]">Ido Dassa</p>
+                <p class="text-[9px] md:text-xs font-light text-[#8eacc0]">Professional Ultra Marathoner</p>
+            </div>
+        </div>
+        <div class="absolute bottom-2 right-3 bg-white px-4 py-3 rounded-xl max-w-fit flex">
+            <img src="{% static 'assets/img/About Us-circle.png' %}" alt="about Us section" class="w-4 h-4 rounded-full">
+            <div class="pl-2">
+                <p class="text-xs font-normal text-[#053c5e]">Race Day Success</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block faqContent %}
+<section class="relative bg-white max-w-6xl border-2 border-[#053c5e] rounded-xl p-2 md:p-20 mx-auto my-12 shadow-lg">
+    <h2 class="text-xl md:text-5xl font-semibold text-[#053c5e] mb-10">Frequently Asked Questions</h2>
+    <div class=" grid grid-cols-1 md:grid-cols-2">
+        <div id="faq-list" class="flex flex-col gap-4">
+            <!-- FAQ -->
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <p class="faq-question text-lg font-medium text-[#053c5e]">What exactly is a Personalized Race Day Plan?</p>
+                <p class="faq-answer hidden mt-2 text-gray-700">A Personalized Race Day Plan is a custom-made strategy that helps trail runners prepare for their races by considering their current fitness levels and specific race goals. It includes training plans, race-day tactics, nutrition advice, mandatory gear recommendations, and weather race day conditions.</p>
+            </div>
+            <!-- FAQ -->
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <p class="faq-question text-lg font-medium text-[#053c5e]">Can the Elevated Race Strategy adapt if my goals or the race details change?</p>
+                <p class="faq-answer hidden mt-2 text-gray-700">Yes, the Elevated Race Strategy can adapt to changes in your goals or race details. The plan can be adjusted based on new information or evolving needs to ensure it remains effective.</p>
+            </div>
+            <!-- FAQ -->
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <p class="faq-question text-lg font-medium text-[#053c5e]">How personalized are the training plans and race strategies?</p>
+                <p class="faq-answer hidden mt-2 text-gray-700">The training plans and race strategies are highly personalized, taking into account your current fitness level, race goals, and individual needs to create a tailored approach.</p>
+            </div>
+            <!-- FAQ -->
+            <div class="faq-item bg-gray-100 rounded-lg p-4 cursor-pointer">
+                <p class="faq-question text-lg font-medium text-[#053c5e]">How will you know my current fitness?</p>
+                <p class="faq-answer hidden mt-2 text-gray-700">We assess your current fitness through detailed information you provide, including past performance, training data, and any specific metrics relevant to your race goals.</p>
+            </div>
+        </div>
+        <img src="{% static 'assets/img/play.png' %}" alt="about Us section" class="hidden absolute bottom-8 right-[-140px] md:flex w-[55%]">
+    </div>   
+</section>
+{% endblock %}
+
+{% block footer %}
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row lg:gap-16 text-white p-16 font-poppins items-center">
+    <div class="flex-1 md:w-2/3">
+        <img  src="{% static 'assets/img/RPLogo.png' %}" alt="" class="w-56">
+        <div class="space-y-4 mt-6">
+            <p class="text-lg">Subscribe to our Newsletter:</p>
+            <form action="" class="flex flex-col md:flex-row gap-2 relative w-full md:w-96">
+                <div class="relative w-full">
+                    <input type="email" placeholder="Enter your email here" class="text-white w-full p-2 rounded-full pl-4 pr-10 bg-transparent border-[1px] border-white">
+                    <button type="submit" class="absolute right-[1px] top-1/2 transform -translate-y-1/2 bg-[#fca42c] text-white py-2 px-3 rounded-full focus:outline-none">
+                        <i class="fa-solid fa-arrow-right fa-lg"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="flex-1 md:w-1/3 mt-4 md:mt-0">
+        <div class="flex flex-col space-y-4">
+            <p class="text-lg">Contact Us:</p>
+            <form action="" class="flex flex-col gap-2 relative w-full md:w-96">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Your name" class="text-gray-800 w-full p-2 rounded-md pl-4 pr-10 bg-white">
+                </div>
+                <div class="relative w-full">
+                    <input type="email" placeholder="Your email" class="text-gray-800 w-full p-2 rounded-md pl-4 pr-10 bg-white">
+                </div>
+                <div class="relative w-full">
+                    <textarea placeholder="Your message" class="text-gray-800 w-full p-2 rounded-md pl-4 pr-10 bg-white"></textarea>
+                </div>
+                <button type="submit" class="bg-[#fca42c] text-white py-2 px-3 rounded-md focus:outline-none">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

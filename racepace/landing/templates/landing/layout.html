@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static tailwind_tags %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			{% block title %} RacePace: Personalized Racing Plans for Endurance
+			Athletes {% endblock %}
+		</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+		{% tailwind_css %}
+		<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+		<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+		</style>
+		<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}" defer></script>
+	</head>
+	<body class="overflow-x-hidden max-w-screen bg-custom-bg bg-cover bg-center bg-fixed">
+		<div class="hero-serction bg-pic-bg max-w-screen bg-cover bg-center bg-fixed">
+			<nav class="font-poppins">
+				<div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8 overflow-x-hidden bg-transparent">
+					<div class="relative flex items-center justify-between">
+					<!-- Mobile menu button -->
+						<div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
+							<button
+								type="button"
+								class="inline-flex items-center justify-center rounded-md p-2 text-[#053c5e] hover:text-[#9fb8ca] focus:outline-none transition duration-200"
+								id="mobile-menu-button"
+							>
+								<span class="sr-only">Open main menu</span>
+								<svg
+									class="block h-6 w-6"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									id="hamburger-icon"
+								>
+									<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h16m-7 6h7"
+									/>
+								</svg>
+								<svg
+									class="hidden h-6 w-6"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									id="x-icon"
+								>
+									<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M6 18L18 6M6 6l12 12"
+									/>
+								</svg>
+							</button>
+						</div>
+					<!-- Logo and Links -->
+					<div class="w-full flex flex-1 py-4 items-center justify-center lg:justify-start">
+					<div class="flex-shrink-0">
+						<img
+						class="h-18 sm:h-24 w-auto"
+						src="{% static 'assets/img/RacePaceLogo.png' %}"
+						alt="Logo"
+						/>
+					</div>
+					<div class="w-full px-10 hidden lg:ml-6 lg:block mr-10">
+						<div class="flex space-x-8 text-white font-normal text-lg justify-end">
+						<a href="#" class="hover:text-[#9fb8ca] transition duration-200">Home</a>
+						<a href="#product" class="hover:text-[#9fb8ca] transition duration-200">Product</a>
+						<a href="#demo" class="hover:text-[#9fb8ca] transition duration-200">Demo</a>
+						<a href="#about" class="hover:text-[#9fb8ca] transition duration-200">About Us</a>
+						<!-- <a href="#" class="hover:text-[#9fb8ca] transition duration-200">Newsletter</a> -->
+						<a href="#contact" class="hover:text-[#9fb8ca] transition duration-200">Contact</a>
+						<a href="#faqs" class="hover:text-[#9fb8ca] transition duration-200">FAQs</a>
+						</div>
+					</div>
+					</div>
+					<!-- Login and SignUp Buttons -->
+					<div class="hidden lg:flex items-center mr-10 space-x-6 lg:static lg:inset-auto lg:ml-6 lg:pr-0 font-poppins font-normal text-lg">
+					<a
+						href="https://findracepace.com/user/login/"
+						class="text-white  hover:text-[#9fb8ca] transition duration-200"
+					>
+						Login
+					</a>
+					<a
+						href="https://findracepace.com/user/register/"
+						class="text-white bg-[#053c5e] rounded-md py-2 px-4 text-center hover:bg-[#9fb8ca] transition duration-200"
+					>
+						Sign Up
+					</a>
+					</div>
+				</div>
+				</div>
+			
+				<!-- Mobile Menu -->
+				<div
+					class="fixed top-24 left-0 transform -translate-x-full lg:hidden transition-transform duration-300 ease-in-out w-[50%] min-h-screen z-50 bg-[#053c5e] rounded-tr-md"
+					id="mobile-menu"
+				>
+				<div class="flex justify-end p-4">
+					<button
+						type="button"
+						class="inline-flex items-center justify-center rounded-md p-2 text-white hover:text-[#9fb8ca] focus:outline-none transition duration-200"
+						id="mobile-menu-close"
+					>
+						<span class="sr-only">Close main menu</span>
+						<svg
+							class="h-6 w-6"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M6 18L18 6M6 6l12 12"
+							/>
+						</svg>
+					</button>
+				</div>
+					<div class="space-y-4 px-8 pt-10 pb-3 text-white font-poppins text-lg">
+						<a href="#" class="block hover:text-[#9fb8ca] transition duration-200">Home</a>
+						<a href="#product" class="block hover:text-[#9fb8ca] transition duration-200">Product</a>
+						<a href="#demo" class="block hover:text-[#9fb8ca] transition duration-200">Demo</a>
+						<a href="#about" class="block hover:text-[#9fb8ca] transition duration-200">About Us</a>
+						<a href="#contact" class="block hover:text-[#9fb8ca] transition duration-200">Contact</a>
+						<a href="#faqs" class="block hover:text-[#9fb8ca] transition duration-200">FAQ</a>
+					</div>
+					<div class="space-y-4 px-8 pt-6 pb-3 text-white font-poppins text-lg">
+						<a href="https://findracepace.com/user/login/" class="block hover:text-[#9fb8ca] transition duration-200">Login</a>
+						<a
+						href="https://findracepace.com/user/register/"
+						class="block bg-[#93bedf] rounded-md py-2 text-center hover:bg-[#9fb8ca] transition duration-300"
+						aria-label="Sign up for RacePace"
+						>
+						Sign Up
+						</a>
+					</div>	
+				</div>
+			</nav>
+			<div id="home" class="overflow-x-hidden h-[300px] md:h-[500px]">{%block heroContent%} {%endblock%}</div>
+		</div>
+		<main>
+			<div class="flex w-full justify-center content-center p-5">
+				<img src="{% static 'assets/img/Brands.png' %}" alt="brands logos">
+			</div>
+			<div class="overflow-x-hidden">{%block content%} {%endblock%}</div>
+			<div class="overflow-x-hidden">{%block supportContent%} {%endblock%}</div>
+			<div id="product" class="overflow-x-hidden mx-12 mt-20">{%block featuresContent%} {%endblock%}</div>
+			<div id="demo" class="overflow-x-hidden mx-12 mt-20">{%block videoContent%} {%endblock%}</div>
+			<div id="about" class="overflow-x-hidden mx-12 mt-20">{%block aboutContent%} {%endblock%}</div>
+			<div id="faqs" class="overflow-x-hidden mx-12 mt-20">{%block faqContent%} {%endblock%}</div>
+		</main>
+		<footer class="w-full bg-[#053c5e] mt-20">
+			<div id="contact" class="overflow-x-hidden">{%block footer%} {%endblock%}</div>
+		</footer>
+	</body>
+</html>
